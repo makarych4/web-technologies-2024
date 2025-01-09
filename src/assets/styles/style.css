@@ -2,10 +2,158 @@
 @import "./fonts.css";
 @import "./utils.css";
 
-.test {
-    color: yellow !important;
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color: #F2F4F7;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-.test {
-    color: red !important;
+header {
+    position: sticky;
+    z-index: 100;
+    width: 100%;
+    top: 0;
+}
+
+.header-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 25px 100px;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.header-block h3 {
+    display: inline;
+    color: #2D66EE;
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+.header-block ul {
+    list-style-type: none;
+    color: #2D66EE;
+}
+
+.header-block li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.header-block a {
+    text-decoration: none;
+}
+
+.header-block img {
+    vertical-align: middle;
+}
+
+nav a {
+    color: black;
+}
+
+.intro {
+    background-color: #F2F4F7;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 35%;
+    margin-left: 100px;
+}
+
+.callback {
+    background-color: white;
+    border-radius: 20px;
+    margin-top: 50px;
+}
+
+.intro-text h1 {
+    font-size: 40px;
+}
+
+.intro-text span {
+    color: #2D66EE;
+}
+
+.callback h2 {
+    font-size: 25px;
+    padding: 30px 20px;
+}
+
+.callback-form form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 30px 20px;
+}
+
+.callback-form label {
+    display: block;
+    color: gray;
+    font-size: 14px;
+}
+
+.callback-form input[type="text"] {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #98A2B3;
+}
+
+.callback-form input[type="text"]:focus {
+    outline: none;
+}
+
+.callback-form input[type="submit"] {
+    background-color: #2D66EE;
+    color: white;
+    border-radius: 5px;
+    padding: 0 25px;
+}
+
+.footer-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #101828;
+    color: white;
+    margin: 25px 100px;
+    border-radius: 20px;
+}
+
+.footer-block h2 {
+    text-align: center;
+    font-size: 40px;
+}
+
+.footer-block p {
+    font-size: 13px;
+    margin-bottom: 30px;
+}
+
+.footer-list {
+    margin-top: -25px;
+}
+
+.footer-list ul li {
+    display: inline-block;
+    margin-right: 150px;
+}
+
+.footer-element p {
+    font-size: 16px;
+}
+
+.footer-element span {
+    color: #98A2B3;
+    font-size: 14px;
+}
+
+.footer-element img {
+    vertical-align: middle;
+    margin-right: 10px;
+    margin-bottom: 5px;
 }
