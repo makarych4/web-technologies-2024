@@ -101,7 +101,17 @@ export const TicTacToe = {
    * Проверка на наличие пустых блоков
    * @returns {boolean} - true если есть пустые блоки, false - если нет
    */
+  // комментарии
   checkHasEmptyBlocks() {
+    for (let i = 0; i < this.matrix.length; i++) {
+      for (let j = 0; j < this.matrix[i].length; j++) {
+        if (this.matrix[i][j] === null) {
+          return true
+        }
+      }
+    }
+
+    return false
   },
 
   /**
@@ -115,7 +125,19 @@ export const TicTacToe = {
   /**
    * Сброс данных и очищение дом дерева
    */
+  // комментарии
   restartGame() {
+    for (let i = 0; i < this.boxes.length; i++){
+      this.setBlockValue(this.boxes[i], true)
+      this.setBlockDom(this.boxes[i], true)
+    }
+
+    this.isXTurn = true
+    this.isGameEnd = false
+
+    if (this.onMove) {
+      this.onMove(this.isXTurn)
+    }
   },
   
   /**
@@ -147,7 +169,21 @@ export const TicTacToe = {
    * @param {HTMLDivElement} target - ячейка в дом дереве
    * @param {boolean?} clear - если true - отчистить ячейку в матрице
    */
+  // комментарии
   setBlockValue(target, clear) {
+    const position = this.getBlockPosition(target)
+    const row = position[0]
+    const col = position[1]
+
+    let value
+
+    if (clear) {
+      value = null
+    } else {
+      value = this.getCurrentTurnValue()
+    }
+
+    this.matrix[row - 1][col - 1] = value
   },
 
   /**
@@ -157,20 +193,38 @@ export const TicTacToe = {
    * @param {HTMLDivElement} target - ячейка в дом дереве
    * @param {boolean?} clear - если true - отчистить target
    */
+  // комментарии
   setBlockDom(target, clear) {
+    let value
+
+    if (clear) {
+      value = ''
+    } else {
+      value = this.getCurrentTurnValue()
+    }
+
+    target.innerHTML = value
   },
 
   /**
    * Получение строки с текущем ходом
    * @returns {string} Текущий ход 'X' или 'O'
    */
+  // комментарии
   getCurrentTurnValue() {
+    if (this.isXTurn) {
+      return 'X'
+    } else {
+      return 'O'
+    }
   },
 
   /**
    * Изменение текущего хода в данных
    */
+  // комментарии
   changeTurnValue() {
+    this.isXTurn = !this.isXTurn
   },
 
   /**
@@ -196,6 +250,8 @@ export const TicTacToe = {
   /**
    * Установить статус об окончании игры
    */
+  // комментарии
   setGameEndStatus() {
+    this.isGameEnd = true;
   }
 }
